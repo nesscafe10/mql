@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MQL - Reward</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/fav/fav.icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        nav img {
+    width: 30px;
+    height: 30px;
+    padding-bottom: 10px;
+            }
+        </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+        <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+            <img src="/img/logo/m.webp" />
+            <h2 class="mb-2 text-white">M Q L</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <a href="/contact.html" class="nav-item nav-link">Contact Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partisipants</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="/partisipants.html" class="dropdown-item">Daftar Peserta</a>
+                        <a href="/pemenang.html" class="dropdown-item">Daftar Pemenang</a>
+                        <a href="/reward.html" class="dropdown-item">Akumulasi Reward</a>
+                        <a href="/upcoming.html" class="dropdown-item">Upcoming Quiz Info</a>
+                        <a href="/lotery.html" class="dropdown-item">Online Lottery</a>
+                    </div>
+                </div>
+                <a href="faq.html" class="nav-item nav-link">FAQ</a>
+            </div>
+            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-headphones text-primary me-3"></i>₡ᴧ𝙧ᴧмє𝘭ℓᴧťє
+            </h4>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <style>
+        .rules {
+            padding: 0px;
+            border-radius: 5px;
+
+        }
+
+        .hal {
+            color: #e7eb0a;
+            background-color: rgb(55, 70, 70);
+            padding: 7px;
+            border-radius: 4px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(145, 145, 145);
+
+        }
+
+        .semua {
+            display: flex;
+            gap: 7px;
+        }
+
+        .pages {
+            color: rgb(156, 164, 172);
+
+        }
+    </style>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5">
+        <div class="owl-carousel header-carousel position-relative mb-5">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="/img/bgimage/bg4.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                    style="background: rgba(6, 3, 21, .5);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <p class="pages">| Home | Partisipants | Online Lottery |</p>
+                                <br>
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Michat Quiz League (MQL)
+                                </h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4"><span class="text-primary">
+                                        Online </span>Lottery</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Berikut Adalah daftar nama peserta yang mengikuti Online Lottery.</p>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Carousel End -->
+    <style>
+        thead tr {
+            color: rgb(219, 231, 241);
+            text-decoration: underline;
+        }
+
+        thead {
+            background-color: #474731;
+
+        }
+
+        table tbody tr:nth-last-of-type(even) {
+            background-color: #2d351f;
+        }
+
+        td img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0, 5rem;
+            border-radius: 50%;
+            vertical-align: middle;
+            border: 2px solid rgb(238, 234, 11);
+
+
+        }
+
+        .judul {
+            line-height: 50px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-left: 10px;
+            background-color: teal;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        table,
+        th,
+        td {
+            padding: 1rem;
+            font-size: small;
+
+        }
+
+        .main {
+            background-color: #312727;
+            border-radius: 5px;
+            overflow: auto;
+
+
+        }
+
+        table {
+            margin: 10px;
+            background-color: rgb(34, 44, 21);
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #3b3b37;
+        }
+
+        tr {
+            color: #dbdf07;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        @media (max-width: 560px) {
+            td:not(:first-of-type) {
+                min-width: 12.1rem
+            }
+    </style>
+
+    <div>
+        <h3 class="judul">
+            Angka Lottery : 9 ... ... ... 
+            </h4>
+    </div>
+    <div class="main">
+        <table>
+            <thead>
+                <tr>
+                    <th> No. </th>
+                    <th> Partisipants</th>
+                    <th> Angka yang Dipilih </th>
+                    <th> Reward Peserta </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td>
+                    <td><img src="/img/partisipants/gladis.jpg" alt=""> Gladis </td>
+                    <td> 1 7 4 5</td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td><img src="/img/partisipants/briee.jpeg" alt=""> Briee </td>
+                    <td> 2 3 0 4 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 3 </td>
+                    <td> <img src="/img/partisipants/undefined.png" alt=""> Sukma </td>
+                    <td> 1 7 0 4 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 4 </td>
+                    <td><img src="/img/partisipants/pus.jpeg" alt=""> 🐾ʟհε ƈεĸ </td>
+                    <td> 1 9 8 5 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 5 </td>
+                    <td><img src="/img/partisipants/naf.jpg" alt=""> ☊几ǟቻ </td>
+                    <td> 0 3 2 5 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 6 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ↙®H🅰CC🔷🇹🇬 </td>
+                    <td> 1 3 0 1 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 7 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ✮prety✮⃕dulkemit </td>
+                    <td> 5 7 5 8 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 8 </td>
+                    <td><img src="/img/partisipants/marqona.jpeg" alt=""> Ghopal </td>
+                    <td> 9 4 8 1 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 9 </td>
+                    <td><img src="/img/partisipants/ayy.jpeg" alt=""> [ 🅰🆈🆈 ] </td>
+                    <td> 1 1 8 8 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>  
+                <tr>
+                    <td> 10 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ᴋilliᴎgᴸ⃝ᵒᵛᵋ🖤 </td>
+                    <td> 4 4 3 3 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>  
+                <tr>
+                    <td> 11 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ™⃟ ⃟🍁𝓤cᏂї ƒάҡє </td>
+                    <td> 8 4 9 7 </td>
+                    <td> Rp. 0.00 </td>
+                </tr> 
+                <tr>
+                    <td> 12 </td>
+                    <td><img src="/img/partisipants/mey.jpg" alt=""> ヾ𝘼𝙨𝙩𝙞☘𝆺𝅥⃝♨ </td>
+                    <td> 1 2 2 2 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr> 
+                <tr>
+                    <td> 13 </td>
+                    <td><img src="/img/partisipants/nuno.jpeg" alt=""> ¥ RaYa ^_° </td>
+                    <td> 5 6 7 0 </td>
+                    <td> Rp. 0.00  </td>
+                    
+                </tr>
+                <tr>
+                    <td> 14 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ﷽⃟,⃟Zein💥💫  </td>
+                    <td> 0 5 1 6 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 15 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> 🅿ᵘłʳ🅰  </td>
+                    <td> 2 3 9 0 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 16 </td>
+                    <td><img src="/img/partisipants/tya.jpg" alt=""> ✨🄼🄰🄷🄸🅁🄰💙 </td>
+                    <td> 1 3 0 8 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 17 </td>
+                    <td><img src="/img/partisipants/lemon.jpeg" alt=""> ━ Ꮮё𝖒𝐨п :ᛠě𝖆･ﾟ </td>
+                    <td> 2 7 1 1 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 18 </td>
+                    <td><img src="/img/partisipants/saeba.jpg" alt=""> ɪ'ᴍ ᴍʀ ϙɪᴀɴᴢɪ </td>
+                    <td> 7 0 8 2 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 19 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> ❦⏤͟͟͞͞✿I࿐ </td>
+                    <td> 2 7 2 0 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 20 </td>
+                    <td><img src="/img/partisipants/adi.png" alt=""> ⒶⒹⒾ ⓂⒾⒸⒽⒺⓁ½ᴸᴵᶠᴱ </td>
+                    <td> 1 6 2 0 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 21 </td>
+                    <td><img src="/img/partisipants/pandu.jpg" alt=""> ヾ𝘼𝙨𝙩𝙖☘𝆺𝅥⃝♨ </td>
+                    <td> 3 1 1 0 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 22 </td>
+                    <td><img src="/img/partisipants/ran.jpeg" alt=""> 💫RAN 💌 </td>
+                    <td> 9 6 1 7 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 23 </td>
+                    <td><img src="/img/partisipants/cinta.jpg" alt=""> Cinta </td>
+                    <td> 9 8 8 8 </td>
+                    <td> Rp. 0.00 </td>
+                </tr>
+                <tr>
+                    <td> 24 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> INEZ </td>
+                    <td> 3 0 0 3 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 25 </td>
+                    <td><img src="/img/partisipants/undefined.png" alt=""> Afis </td>
+                    <td> 2 5 2 5 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+                <tr>
+                    <td> 26 </td>
+                    <td><img src="/img/partisipants/oki.jpeg" alt=""> ❅🅞𝚔ⁱ ᑕųράᖽᐸ❅   </td>
+                    <td> 0 8 1 3 </td>
+                    <td> Rp. 0.00 </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <div style="padding-left: 11px;">
+        <html>
+
+        <head>
+            <style>
+                #HCB_comment_box #hcb_form_content,
+                #HCB_comment_box #hcb_form_email,
+                #HCB_comment_box #hcb_form_name,
+                #HCB_comment_box #hcb_form_website {
+                    background-color: rgb(230, 230, 235);
+                }
+            </style>
+            <style>
+                #HCB_comment_box blockquote {
+                    color: rgb(0, 0, 0);
+                }
+            </style>
+            <style>
+                #HCB_comment_box {
+                    color: rgb(1, 38, 248);
+                }
+            </style>
+
+        </head>
+
+        <body>
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eZx6FZmUvNtqfsHQRTxNu%2F"+"&opts=16798&num=10&ts=1739119302040");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <!-- end www.htmlcommentbox.com -->  
+        </body>
+
+        </html>
+
+    </div>
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center">
+                <h6 class="text-secondary text-uppercase">Testimonial</h6>
+                <h1 class="mb-0">Our Partisipants Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/awenctk.jpg"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Awen CTK</h5>
+                            <p class="m-0">WOT, Im Lovin it.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Creative banget soal²nya gak bosenin, reward nya juga menggiurkan.. keren abisss..
+                    </p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/harjuna.jpg"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Harjuna</h5>
+                            <p class="m-0">Valar morghulis.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Seru Jawab quiznya, berpacu dengan waktu.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/oki.jpeg"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Oki Cupank</h5>
+                            <p class="m-0">I love The way you lie.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Celen yg terbaik adalah Quiz,
+                        Menang kalah urusan belakang,
+                        Kulakukan yg terbaik utk bermain.
+
+                        Keren buat penyelenggara idenya.
+
+                        LANJUTKAN... </p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/nong.jpeg"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Nong Plara</h5>
+                            <p class="m-0">yang lain hempaskan fokus kuis biar dapat jackpot.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Kuis nyaa seru.Jadi semakin pintar.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/bulan.jpeg"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Bulan</h5>
+                            <p class="m-0">Keep smile, spirit and strong.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Quiz dengan reward menarik dan konsep acaranya Seru.</p>
+                </div>
+                <div class="testimonial-item p-4 my-5">
+                    <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
+                    <div class="d-flex align-items-end mb-4">
+                        <img class="img-fluid flex-shrink-0" src="/img/partisipants/adi.png"
+                            style="width: 80px; height: 80px;">
+                        <div class="ms-4">
+                            <h5 class="mb-1">Adi Michel</h5>
+                            <p class="m-0">Berjuang terus.</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">Belum ada Acara Sekeren ini di MC.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <style>
+        .foot {
+            background-color: rgb(41, 47, 53);
+            line-height: 30px;
+        }
+
+        .footer {
+            background-color: rgb(60, 65, 68);
+            align-items: center;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .col {
+            align-items: center;
+            text-align: center;
+            color: aliceblue;
+        }
+    </style>
+    </audio>
+    <!-- Footer Start -->
+
+    <div style="background-color: black;">
+        <div class="foot">
+            <div class="row">
+                <div class="footer">
+                    &copy; <a class="border-bottom" href="index.html">Michat Quiz League</a>, All Right Reserved.
+                </div>
+                <div class="col">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed By <a class="border-bottom" href="index.html">₡ᴧ𝙧àмє𝘭ℓaťє
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
