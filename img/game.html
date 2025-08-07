@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tebak Angka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      margin: 0;
+    }
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    #chatBox {
+      border: 1px solid #ccc;
+      height: 100px;
+      overflow-y: scroll;
+      margin-top: 10px;
+      padding: 5px;
+      background-color: #f9f9f9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 14px;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px 5px 5px 0;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        font-size: 12px;
+      }
+      button {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBALc8nUyDT8pd1UWB7OqEMRYvRA4vT0PI",
+      authDomain: "lottery-69b04.firebaseapp.com",
+      databaseURL: "https://lottery-69b04-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "lottery-69b04",
+      storageBucket: "lottery-69b04.firebasestorage.app",
+      messagingSenderId: "1041016544940",
+      appId: "1:1041016544940:web:65a980e3ffdc5a25160909",
+      measurementId: "G-Z04Y5CJ3PB"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+</head>
+<body>
+  <div id="userInfo"></div>
+  <button id="logoutBtn">Logout</button>
+  <a href="https://www.mql.my.id" target="_blank">
+    <button>Home</button>
+  </a>
+  <div id="timer" style="font-weight:bold; font-size:18px; margin-top:10px;"></div>
+  <div id="currentNumber"></div>
+
+  <div id="adminControls" style="display:none;">
+    <button id="startBtn">Mulai Sesi</button>
+    <button id="newSessionBtn" style="display:none;">New Session</button>
+    <button id="cancelBeforeStartBtn">Batalkan Sesi Sebelum Mulai</button>
+    <button id="endSessionBtn" style="display:none;">Akhiri Sesi</button>
+  </div>
+
+  <div>
+    <input type="text" id="guessInput" placeholder="Tebak 4 digit angka" maxlength="4" disabled>
+    <button onclick="submitGuess()">Kirim</button>
+  </div>
+
+  <table border="1" id="playerTable">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nickname</th>
+        <th>Angka</th>
+        <th>Hadiah</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="chatBox"></div>
+  <input type="text" id="chatInput" placeholder="Ketik pesan...">
+  <button onclick="sendChat()">Kirim</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
