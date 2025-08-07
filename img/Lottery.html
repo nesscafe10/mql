@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Tebak Angka</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
+  <script src="firebase.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Tebak Angka - Login / Daftar</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="nickname" placeholder="Nickname (hanya saat daftar)">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Daftar</button>
+    <p id="message"></p>
+  </div>
+  <script>
+    const adminEmail = "selimau.wen9.net@gmail.com";
+    const adminPassword = "admin123";
+
+    function login() {
+      const email = emailInput.value = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => window.location.href = "game.html")
+        .catch(err => {
+          if (email === adminEmail && err.code === "auth/user-not-found") {
+            auth.createUserWithEmailAndPassword(email, adminPassword)
+              .then(() => window.location.href = "game.html")
+              .catch(e => document.getElementById("message").innerText = e.message);
+          } else {
+            document.getElementById("message").innerText = err.message;
+          }
+        });
+    }
+
+    function register() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const nickname = document.getElementById("nickname").value;
+
+      if (!nickname) {
+        document.getElementById("message").innerText = "Nickname wajib diisi saat daftar.";
+        return;
+      }
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(cred => {
+          return db.collection("users").doc(cred.user.uid).set({
+            email,
+            nickname,
+            angka: "",
+            hadiah: 0
+          });
+        })
+        .then(() => {
+          window.location.href = "game.html";
+        })
+        .catch(err => {
+          document.getElementById("message").innerText = err.message;
+        });
+    }
+  </script>
+</body>
+</html>
