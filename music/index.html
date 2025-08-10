@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chat Private - Tebak Angka (Demo)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Chat Private (2 Orang)</h1>
+        <div id="user-bar" class="hidden">
+          <span id="user-nick"></span>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </header>
+
+      <main>
+        <!-- Auth area -->
+        <section id="auth-area">
+          <div class="card">
+            <h2>Login</h2>
+            <input id="login-email" type="email" placeholder="Email" />
+            <input id="login-password" type="password" placeholder="Password" />
+            <button id="login-btn">Login</button>
+
+            <hr />
+
+            <h2>Register</h2>
+            <input id="reg-email" type="email" placeholder="Email" />
+            <input
+              id="reg-password"
+              type="password"
+              placeholder="Password (min 6)"
+            />
+            <input id="reg-nick" type="text" placeholder="Nickname" />
+            <button id="reg-btn">Register</button>
+          </div>
+        </section>
+
+        <!-- Lobby: create / join room -->
+        <section id="lobby-area" class="hidden">
+          <div class="card">
+            <h2>Lobby</h2>
+            <button id="create-room-btn">Buat Room Private (share link)</button>
+            <p>atau gabung ke room:</p>
+            <input id="join-room-id" placeholder="Masukkan Room ID" />
+            <button id="join-room-btn">Gabung</button>
+
+            <div id="room-link" class="hidden">
+              <p>Share link ini ke 1 orang:</p>
+              <input id="room-link-input" readonly />
+              <button id="copy-link-btn">Salin Link</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chat area -->
+        <section id="chat-area" class="hidden">
+          <div class="card chat-card">
+            <h2>Room: <span id="room-id-title"></span></h2>
+            <div id="messages"></div>
+            <form id="msg-form">
+              <input
+                id="msg-input"
+                placeholder="Tulis pesan..."
+                autocomplete="off"
+              />
+              <button type="submit">Kirim</button>
+            </form>
+            <button id="leave-room-btn" class="danger">Tinggalkan Room</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small
+          >Simple private chat — untuk 2 orang. Ganti firebaseConfig di
+          <code>app.js</code>.</small
+        >
+      </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

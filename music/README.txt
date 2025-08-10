@@ -1,0 +1,1 @@
+Buka index.html melalui server lokal. Ganti firebaseConfig di app.js dengan config dari Firebase Console. Enable Authentication (Email/Password) and Firestore.
