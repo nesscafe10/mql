@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tebak Angka - Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Tebak Angka</div>
+      <div id="user-area" class="user-area">
+        <span id="nickname-display"></span>
+        <button id="btn-logout" class="btn small">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="left">
+        <div class="card">
+          <div class="session-info">
+            <h2 id="session-status">
+              Sesi: <span id="session-active">Tidak berjalan</span>
+            </h2>
+            <div class="timer-wrap">
+              <div id="timer">--:--</div>
+              <div class="progress-bg">
+                <div id="progress-bar" class="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="admin-controls" class="admin-controls hidden">
+            <button id="btn-start" class="btn">Mulai Permainan</button>
+            <button id="btn-end" class="btn danger">End Session</button>
+            <button id="btn-cancel" class="btn muted">Batalkan Sesi</button>
+          </div>
+
+          <div class="card mt">
+            <h3>Angka Sistem Terakhir</h3>
+            <div id="random-digits" class="random-digits">-</div>
+            <p class="muted small">
+              (<span id="digits-count">0</span> angka keluar)
+            </p>
+          </div>
+
+          <div class="card mt">
+            <h3>Masukkan Tebakan (4 digit)</h3>
+            <input
+              id="guess-input"
+              maxlength="4"
+              pattern="\d*"
+              placeholder="e.g. 0365"
+            />
+            <button id="btn-submit-guess" class="btn">Submit</button>
+            <p class="muted small">Kamu hanya dapat submit sekali per sesi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="card">
+          <h3>Peserta</h3>
+          <table id="players-table" class="players-table">
+            <thead>
+              <tr>
+                <th>Nickname</th>
+                <th>Angka</th>
+                <th>Reward</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="players-body"></tbody>
+          </table>
+        </div>
+
+        <div class="card mt chat-card">
+          <h3>Chat</h3>
+          <div id="chat-window" class="chat-window"></div>
+          <div class="chat-input">
+            <input id="chat-text" placeholder="Ketik pesan..." />
+            <button id="btn-send-chat" class="btn">Kirim</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-database-compat.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+      // ensure auth
+      firebase.auth().onAuthStateChanged((user) => {
+        if (!user) window.location = "index.html";
+      });
+    </script>
+  </body>
+</html>
